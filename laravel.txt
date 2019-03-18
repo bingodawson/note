@@ -1,0 +1,35 @@
+laravel 配置mysql前缀：
+$plan_list = $obj_plan->setTable('announcement_plan as hello')->
+            where('record_status', 1);
+解析：select * from `qhb_announcement_plan` as `qhb_hello` where `record_status` = ?
+config/database.php 配置 prefix
+        'mysql' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_HOST', 'localhost'),
+            'database'  => env('DB_DATABASE', 'forge'),
+            'username'  => env('DB_USERNAME', 'forge'),
+            'password'  => env('DB_PASSWORD', ''),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => 'qhb_',
+            'strict'    => false,
+        ],
+		
+       $plan_list = $obj_plan->setTable('announcement_plan as hello')->leftJoin('announcement_tpl as tpl', 'tpl.id', '=', 'hello.tpl_id')->
+            where('record_status', 1);
+解析：		
+select * from `qhb_announcement_plan` as `qhb_hello`
+ left join `qhb_announcement_tpl` as `qhb_tpl` on `qhb_tpl`.`id` = `qhb_hello`.`tpl_id` where `record_status` = ?
+ 
+ 
+ where 条件里 =可省略，但leftJoin里条件等号不可省略。
+ 
+ set Table里必须带上表名
+ 
+ 
+ 
+ 连接闭包和外界变量的关键字：USE
+闭包可以保存所在代码块上下文的一些变量和值。PHP在默认情况下，匿名函数不能调用所在代码块的上下文变量，而需要通过使用use关键字。
+
+
+		

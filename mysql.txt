@@ -1,0 +1,43 @@
+发布订阅 与 观察者模式区别：
+http://www.sohu.com/a/207062452_464084
+
+
+skip-grant-tables
+
+mysql忘记密码：
+
+use mysql;
+update user set authentication_string = password("bluezhai") where user = 'root';
+
+去掉skip-grant-tables，重启mysql服务。
+
+
+
+用户管理，为团队成员分配合适的权限
+create user one@localhost identified by '123456';
+
+git bash 里连接mysql，命令卡主不动的原因：
+winpty   mysql -uroot -p
+这样就直接能连上了,同样的使用其他的windows命令也是一样的
+
+grant all privileges on *.* to one@localhost
+grant all privileges on *.* to 'one'@localhost
+用户名带不带单引号，无影响。
+
+一条命令，及创建用户又分配权限
+grant all privileges on *.* to one@localhost identified by '123456';
+
+
+修改权限，重新执行grant语句。
+
+撤销权限：
+
+
+重启mysql客户端以验证生效。
+
+一定要带上 on 表名。
+撤销权限：
+revoke update on table.* to two@localhost;
+
+delete user:
+drop user two@localhost;
