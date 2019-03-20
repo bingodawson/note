@@ -31,5 +31,8 @@ select * from `qhb_announcement_plan` as `qhb_hello`
  连接闭包和外界变量的关键字：USE
 闭包可以保存所在代码块上下文的一些变量和值。PHP在默认情况下，匿名函数不能调用所在代码块的上下文变量，而需要通过使用use关键字。
 
+https://blog.csdn.net/qq_38375394/article/details/79524986
+
+
 
 		

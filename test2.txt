@@ -1,0 +1,11 @@
+"[{
+                'id': 64,
+                'announcement_id': 61,
+                'img_url': 'https://qihuibang-dev.oss-cn-shanghai.aliyuncs.com/images/201902/5c6e9e60df095.jpg'
+            },
+            {
+                'id': 65,
+                'announcement_id': 61,
+                'img_url': 'https://qihuibang-dev.oss-cn-shanghai.aliyuncs.com/images/201902/5c6e9e69761e0.jpg'
+            }
+        ]"

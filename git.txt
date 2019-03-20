@@ -12,7 +12,7 @@ git clean -f
  
 # 连 untracked 的目录也一起删掉
 git clean -fd
- 
+  
 # 连 gitignore 的untrack 文件/目录也一起删掉 （慎用，一般这个是用来删掉编译出来的 .o之类的文件用的）
 git clean -xfd
  
@@ -39,5 +39,14 @@ git log和 git reflog的比较
 
 git stash相关用法：
 https://www.cnblogs.com/zndxall/archive/2018/09/04/9586088.html
+
+
+已经commit了代码，如何将这些代码挪到新分支下面。
+git reset --soft head^
+此时git status查看文件就变为已经git add状态，在暂存区了。
+接着按照前面有关git栈思路操作即可。
+
+
+
 
 
