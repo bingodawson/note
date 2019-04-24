@@ -41,3 +41,12 @@ revoke update on table.* to two@localhost;
 
 delete user:
 drop user two@localhost;
+
+
+transaction 外更新语句。 更新语句先执行了。
+
+
+打断点技术： 每段逻辑都打一个，确定代码走向
+
+先设置sql_mode: SELECT @@sql_mode
+SET @@sql_mode = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
