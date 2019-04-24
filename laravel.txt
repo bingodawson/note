@@ -40,6 +40,19 @@ https://blog.csdn.net/qq_38375394/article/details/79524986
             ->where('gift_order.company_id', $this->userinfo->company_id)
             ->select(DB::raw("gift_order.id, gift_order.order_no,uw.wechat_name,gift_order.created_at"))->get();
         var_dump($all_order);exit;
+		
+		
+https://learnku.com/docs/laravel/5.8/seeding/3929
+
+for($i = 0 ; $i < 10000 ; $i++){
+			echo date('Y-m-d H:i:s');
+			$insert_num = 100; // 插入次数
+			while($insert_num--) {
+				$data_num = 50; // 每次插入的条数
+				factory(App\User::class, $data_num)->create();
+			}
+			echo ' | '.date('Y-m-d H:i:s') . "?\n";
+		}
 
 
 
